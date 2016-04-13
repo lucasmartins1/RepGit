@@ -59,7 +59,7 @@ public class Prim {
 					}// end if
 				} // end if
 			} //end for
-		} // end while
+		} // end while teste :)
 		return X;
 	}
 	
