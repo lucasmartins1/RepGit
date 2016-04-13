@@ -44,8 +44,8 @@ public class Prim {
 		return x;
 	}
 	
-	public Graph process(){
-		int r = 0;
+	public Graph process(int num){
+		int r = num;
 		for(int i=0; i<g.getSizeVertex(); i++){
 			key[i] = Integer.MAX_VALUE;
 			Q[i] = 1;
