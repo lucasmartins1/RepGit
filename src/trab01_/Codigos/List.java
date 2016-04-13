@@ -39,13 +39,15 @@ public class List {
 		return false;
 	}
 	
-	public void show(){
+	public String show(){
+            String imp="";
 		Item aux = head;
 		while(aux != null){
-			System.out.print(aux.getValue()+"(P:"+aux.getWeight()+")-->");
-			aux = aux.getNext();
+                    imp = imp + aux.getValue()+"(P:"+aux.getWeight()+")-->";
+                    aux = aux.getNext();
 		}
-		System.out.print("null");
+		imp = imp +"null";
+                return imp;
 	}
 	
 	public int getWeight(int value){

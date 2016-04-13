@@ -5,6 +5,8 @@
  */
 package trab01_.Interfaces;
 
+import trab01_.Codigos.Graph;
+
 /**
  *
  * @author user
@@ -12,9 +14,17 @@ package trab01_.Interfaces;
 public class IDigrafo extends javax.swing.JFrame {
 
     /**
-     * Creates new form IDigrafo
+     * Creates new form IGrafo
+     * @param lista
      */
-    public IDigrafo() {
+    
+    private Graph g;
+    
+    public IDigrafo(Graph g) {
+        this.g = g;
+        initComponents();
+    }
+    public IDigrafo(){
         initComponents();
     }
 
@@ -27,64 +37,148 @@ public class IDigrafo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backBtn = new javax.swing.JButton();
+        conexBtn = new javax.swing.JButton();
+        primBtn = new javax.swing.JButton();
+        krusBtn = new javax.swing.JButton();
         largBtn = new javax.swing.JButton();
         profBtn = new javax.swing.JButton();
-        camBtn = new javax.swing.JButton();
         grafiLabel = new javax.swing.JLabel();
+        backBtn = new javax.swing.JButton();
+        conexBtn1 = new javax.swing.JButton();
+        conexBtn2 = new javax.swing.JButton();
+        conexBtn3 = new javax.swing.JButton();
+        conexBtn5 = new javax.swing.JButton();
+        conexBtn7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Funções de Digrafos");
 
-        backBtn.setText("Voltar");
+        conexBtn.setText("Verificar se o grafo é CONEXO");
+
+        primBtn.setText("Algoritmo de PRIM");
+        primBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                primBtnActionPerformed(evt);
+            }
+        });
+
+        krusBtn.setText("Algoritmo de KRUSKAL");
 
         largBtn.setText("Busca em LARGURA");
+        largBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                largBtnActionPerformed(evt);
+            }
+        });
 
         profBtn.setText("Busca em PROFUNDIDADE");
-
-        camBtn.setText("Calcular Caminho");
+        profBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profBtnActionPerformed(evt);
+            }
+        });
 
         grafiLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        grafiLabel.setText("Digrafo");
+        grafiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        grafiLabel.setText("Dígrafo");
+
+        backBtn.setText("Voltar");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        conexBtn1.setText("Verificar se o grafo é CONEXO");
+
+        conexBtn2.setText("Verificar se o grafo é CONEXO");
+
+        conexBtn3.setText("Verificar se o grafo é CONEXO");
+
+        conexBtn5.setText("Verificar se o grafo é CONEXO");
+
+        conexBtn7.setText("Verificar se o grafo é CONEXO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(largBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(profBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(camBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(grafiLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(backBtn)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(backBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(grafiLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(conexBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(krusBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(largBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(primBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(profBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(conexBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(conexBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(conexBtn3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(conexBtn5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(conexBtn7, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(grafiLabel)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(profBtn)
-                    .addComponent(camBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(largBtn)
-                .addGap(98, 98, 98)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(largBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(conexBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(profBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(conexBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(conexBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                    .addComponent(primBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(conexBtn5, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                    .addComponent(krusBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(conexBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                    .addComponent(conexBtn7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(backBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void primBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_primBtnActionPerformed
+        IPrim p = new IPrim(g);
+        p.setVisible(true);
+    }//GEN-LAST:event_primBtnActionPerformed
+
+    private void profBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profBtnActionPerformed
+        IProfundidade d = new IProfundidade(g);
+        d.setVisible(true);
+    }//GEN-LAST:event_profBtnActionPerformed
+
+    private void largBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_largBtnActionPerformed
+        ILargura w = new ILargura(g);
+        w.setVisible(true);
+    }//GEN-LAST:event_largBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,9 +220,16 @@ public class IDigrafo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
-    private javax.swing.JButton camBtn;
+    private javax.swing.JButton conexBtn;
+    private javax.swing.JButton conexBtn1;
+    private javax.swing.JButton conexBtn2;
+    private javax.swing.JButton conexBtn3;
+    private javax.swing.JButton conexBtn5;
+    private javax.swing.JButton conexBtn7;
     private javax.swing.JLabel grafiLabel;
+    private javax.swing.JButton krusBtn;
     private javax.swing.JButton largBtn;
+    private javax.swing.JButton primBtn;
     private javax.swing.JButton profBtn;
     // End of variables declaration//GEN-END:variables
 }

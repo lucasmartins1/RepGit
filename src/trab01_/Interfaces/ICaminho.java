@@ -38,7 +38,7 @@ public class ICaminho extends javax.swing.JFrame {
         backbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(452, 468));
+        setTitle("Caminho entre vértices");
 
         largBtn.setText("Algortimo de Busca em Largura");
         largBtn.addActionListener(new java.awt.event.ActionListener() {

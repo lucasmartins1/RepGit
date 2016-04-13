@@ -22,13 +22,15 @@ public class MatrixAdjacency extends ComputationalRepresentation{
 		return matrix[u][v] == 1;
 	}
 	
-	public void show(){
+	public String show(){
+            String imp="";
 		for(int i=0; i<this.sizeVertex; i++){
 			for(int j=0; j<this.sizeVertex; j++){
-				System.out.print(matrix[i][j]+ "(P:"+weight[i][j]+") ");
+                            imp = imp+matrix[i][j]+ "(P:"+weight[i][j]+") ";
 			}
-			System.out.println();
+			imp = imp+"\n";
 		}
+                return imp;
 	}
 	
 	public int getWeight(int u, int v){

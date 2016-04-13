@@ -49,6 +49,7 @@ public class ILargura extends javax.swing.JFrame {
         buscarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Largura");
 
         buscaLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         buscaLabel.setText("BUSCA EM LARGURA");

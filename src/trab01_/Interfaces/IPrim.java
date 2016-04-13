@@ -50,6 +50,7 @@ public class IPrim extends javax.swing.JFrame {
         buscarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Prim");
 
         buscaLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         buscaLabel.setText("ALGORITMO DE PRIM");
@@ -125,6 +126,14 @@ public class IPrim extends javax.swing.JFrame {
         int num;
         num = Integer.valueOf(this.text.getText());
         Prim p = new Prim(g);
+        if (num>=g.getSizeVertex()){
+            JOptionPane.showMessageDialog(new JFrame(), "Vértice não existente", "Erro no carregamento",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            Graph result;
+            result = p.process(num);
+            this.textArea.setText(result.show());
+        }
         
     }//GEN-LAST:event_buscarBtnActionPerformed
 

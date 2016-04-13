@@ -17,9 +17,11 @@ public class Graph {
 		return rep.verifyAdjacency(u, v);
 	}
 	
-	public void show(){
-		System.out.println("Número de Vértices: "+this.sizeVertex);
-		rep.show();
+	public String show(){
+            String imp="";
+		imp = imp +"Número de Vértices: "+this.sizeVertex+"\n\n";
+		imp = imp+rep.show();
+                return imp;
 	}
 	
 	public int getSizeVertex(){

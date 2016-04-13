@@ -51,6 +51,7 @@ public class IGrafo extends javax.swing.JFrame {
         conexBtn7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Funções de Grafos");
 
         conexBtn.setText("Verificar se o grafo é CONEXO");
 
@@ -165,7 +166,8 @@ public class IGrafo extends javax.swing.JFrame {
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void primBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_primBtnActionPerformed
-        
+        IPrim p = new IPrim(g);
+        p.setVisible(true);
     }//GEN-LAST:event_primBtnActionPerformed
 
     private void profBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profBtnActionPerformed

@@ -33,6 +33,7 @@ public class IImpressao extends javax.swing.JFrame {
         backBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Impressão");
 
         text.setColumns(20);
         text.setRows(5);

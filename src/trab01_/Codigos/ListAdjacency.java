@@ -25,12 +25,12 @@ public class ListAdjacency extends ComputationalRepresentation{
 		return lists[u].getWeight(v);
 	}
 	
-	public void show(){
+	public String show(){
+            String imp="";
 		for(int i=0; i<super.sizeVertex; i++){
-			System.out.print("||"+i+"||-->");
-	        lists[i].show();
-	        System.out.println();
+                    imp = imp + "||"+i+"||-->" + lists[i].show()+"\n";
 		}
+                return imp;
 	}
 	
 }
