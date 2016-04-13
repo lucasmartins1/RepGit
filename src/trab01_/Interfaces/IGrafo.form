@@ -34,8 +34,8 @@
                           <Component id="krusBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="largBtn" alignment="1" max="32767" attributes="0"/>
                           <Component id="primBtn" alignment="1" max="32767" attributes="0"/>
-                          <Component id="profBtn" alignment="1" max="32767" attributes="0"/>
-                          <Component id="conexBtn" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
+                          <Component id="profBtn" alignment="1" pref="177" max="32767" attributes="0"/>
+                          <Component id="conexBtn" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="64" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
