@@ -2,6 +2,7 @@ package trab01_.Codigos;
 
 
 
+
 public class Prim {
 	private int Q[]; // vértices que ainda não fazem parte de X
 	private int key[]; // peso da aresta mais leve do vértice key[u]
@@ -17,6 +18,7 @@ public class Prim {
 		pi 		= new int[g.getSizeVertex()];
 		for(int i = 0; i<g.getSizeVertex(); i++){
 			Q[i] = 0;
+			pi[i] = -1;
 		}
 	}
 	
@@ -31,17 +33,19 @@ public class Prim {
 	
 	protected int extractMin(){
 		int aux = Integer.MAX_VALUE;
+		int x = 0;
 		for(int i=0; i<g.getSizeVertex(); i++){
 			if(key[i] < aux && Q[i] != 0){
-				aux = i;
-				Q[i] = 0;
+				aux = key[i];
+				x = i;
 			}
 		}
-		return aux;
+		Q[x] = 0;
+		return x;
 	}
 	
-	public Graph process(int num){
-		int r = num;
+	public Graph process(){
+		int r = 0;
 		for(int i=0; i<g.getSizeVertex(); i++){
 			key[i] = Integer.MAX_VALUE;
 			Q[i] = 1;
@@ -50,7 +54,8 @@ public class Prim {
 		
 		while(emptyQ()){
 			int u = extractMin();
-			X.addEdge(u, pi[u], g.getWeight(u, pi[u]));
+			if(pi[u] != -1)
+				X.addEdge(u, pi[u], g.getWeight(u, pi[u]));
 			for(int v=0; v<g.getSizeVertex(); v++){
 				if(g.verifyAdjacency(v, u)){
 					if(Q[v] == 1 && g.getWeight(u, v) < key[v]){
@@ -59,7 +64,7 @@ public class Prim {
 					}// end if
 				} // end if
 			} //end for
-		} // end while teste :)
+		} // end while
 		return X;
 	}
 	
