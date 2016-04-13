@@ -14,7 +14,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import trab01_.Codigos.Graph;
 import trab01_.Codigos.ListAdjacency;
+import trab01_.Codigos.ListAdjacency_D;
 import trab01_.Codigos.MatrixAdjacency;
+import trab01_.Codigos.MatrixAdjacency_D;
 
 
 /**
@@ -149,22 +151,33 @@ public class IPrincipal extends javax.swing.JFrame {
             line = arq.readLine();
             tipo = Integer.valueOf(line);
             
-            line = arq.readLine();
-            tam = Integer.valueOf(line);
-
-            Graph g = new Graph(tam, new MatrixAdjacency(tam)); //Cria o grafo, como lista de adjacencia
-            
-            while((line = arq.readLine()) != null){
-                valores = line.split(" ");
-                g.addEdge( Integer.parseInt(valores[0]), Integer.parseInt(valores[1]), Integer.parseInt(valores[2]) );
-            }
-            
             if (tipo == 0){
+                line = arq.readLine();
+                tam = Integer.valueOf(line);
+
+                Graph g = new Graph(tam, new MatrixAdjacency(tam)); //Cria o grafo, como lista de adjacencia
+
+                while((line = arq.readLine()) != null){
+                    valores = line.split(" ");
+                    g.addEdge( Integer.parseInt(valores[0]), Integer.parseInt(valores[1]), Integer.parseInt(valores[2]) );
+                }
                 IGrafo grafo = new IGrafo(g);
                 grafo.setVisible(true);
+                
             }
-            else if(tipo == 1){
-                //DIGRAFO
+            
+            else if(tipo == 1){//Caso Digrafo
+                line = arq.readLine();
+                tam = Integer.valueOf(line);
+
+                Graph g = new Graph(tam, new MatrixAdjacency_D(tam)); //Cria o grafo, como lista de adjacencia
+
+                while((line = arq.readLine()) != null){
+                    valores = line.split(" ");
+                    g.addEdge( Integer.parseInt(valores[0]), Integer.parseInt(valores[1]), Integer.parseInt(valores[2]) );
+                }
+                IDigrafo dgrafo = new IDigrafo(g);
+                dgrafo.setVisible(true);
             }
             
         } catch (FileNotFoundException ex) {
@@ -186,22 +199,31 @@ public class IPrincipal extends javax.swing.JFrame {
             line = arq.readLine();
             tipo = Integer.valueOf(line);
             
-            line = arq.readLine();
-            tam = Integer.valueOf(line);
+            if (tipo == 0){// Caso for um grafo
+                line = arq.readLine();
+                tam = Integer.valueOf(line);
 
-            Graph g = new Graph(tam, new ListAdjacency(tam)); //Cria o grafo, como lista de adjacencia
-            
-            while((line = arq.readLine()) != null){
-                valores = line.split(" ");
-                g.addEdge( Integer.parseInt(valores[0]), Integer.parseInt(valores[1]), Integer.parseInt(valores[2]) );
-            }
-            
-            if (tipo == 0){
+                Graph g = new Graph(tam, new ListAdjacency(tam)); //Cria o grafo, como lista de adjacencia
+
+                while((line = arq.readLine()) != null){
+                    valores = line.split(" ");
+                    g.addEdge( Integer.parseInt(valores[0]), Integer.parseInt(valores[1]), Integer.parseInt(valores[2]) );
+                }
                 IGrafo grafo = new IGrafo(g);
                 grafo.setVisible(true);
             }
-            else if(tipo == 1){
-                //DIGRAFO
+            else if(tipo == 1){//Caso digrafo
+                line = arq.readLine();
+                tam = Integer.valueOf(line);
+
+                Graph g = new Graph(tam, new ListAdjacency_D(tam)); //Cria o grafo, como lista de adjacencia
+
+                while((line = arq.readLine()) != null){
+                    valores = line.split(" ");
+                    g.addEdge( Integer.parseInt(valores[0]), Integer.parseInt(valores[1]), Integer.parseInt(valores[2]) );
+                }
+                IDigrafo dgrafo = new IDigrafo(g);
+                dgrafo.setVisible(true);
             }
             
         } catch (FileNotFoundException ex) {

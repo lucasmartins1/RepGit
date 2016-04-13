@@ -31,28 +31,17 @@
                   <Component id="grafiLabel" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="conexBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="krusBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="largBtn" alignment="1" max="32767" attributes="0"/>
                           <Component id="primBtn" alignment="1" max="32767" attributes="0"/>
                           <Component id="profBtn" alignment="1" max="32767" attributes="0"/>
+                          <Component id="conexBtn" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="64" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="conexBtn1" max="32767" attributes="0"/>
-                                  <Component id="conexBtn2" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="conexBtn3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="conexBtn5" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="conexBtn7" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="conexBtn1" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="conexBtn2" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="conexBtn7" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -75,18 +64,12 @@
                   <Component id="conexBtn2" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="conexBtn3" pref="52" max="32767" attributes="0"/>
-                  <Component id="primBtn" max="32767" attributes="0"/>
-              </Group>
+              <Component id="primBtn" min="-2" pref="52" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="conexBtn5" pref="52" max="32767" attributes="0"/>
-                  <Component id="krusBtn" max="32767" attributes="0"/>
-              </Group>
+              <Component id="krusBtn" min="-2" pref="52" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="conexBtn" pref="52" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="conexBtn" min="-2" pref="52" max="-2" attributes="0"/>
                   <Component id="conexBtn7" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="18" max="32767" attributes="0"/>
@@ -99,7 +82,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="conexBtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar se o grafo &#xe9; CONEXO"/>
+        <Property name="text" type="java.lang.String" value="CAMINHO entre V&#xe9;rtices"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="primBtn">
@@ -150,27 +133,17 @@
     </Component>
     <Component class="javax.swing.JButton" name="conexBtn1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar se o grafo &#xe9; CONEXO"/>
+        <Property name="text" type="java.lang.String" value="Algoritmo de DIJKSTRA"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="conexBtn2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar se o grafo &#xe9; CONEXO"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="conexBtn3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar se o grafo &#xe9; CONEXO"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="conexBtn5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar se o grafo &#xe9; CONEXO"/>
+        <Property name="text" type="java.lang.String" value="Algoritmo de BELLMAN-FORD"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="conexBtn7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar se o grafo &#xe9; CONEXO"/>
+        <Property name="text" type="java.lang.String" value="Visualizar"/>
       </Properties>
     </Component>
   </SubComponents>
