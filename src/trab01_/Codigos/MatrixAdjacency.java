@@ -17,6 +17,11 @@ public class MatrixAdjacency extends ComputationalRepresentation{
 		weight[u][v] = w;
 		weight[v][u] = w;
 	}
+
+	public void addEdgeD(int u, int v, int w){
+		matrix[u][v] = 1;
+		weight[u][v] = w;
+	}
 	
 	public boolean verifyAdjacency(int u, int v){
 		return matrix[u][v] == 1;

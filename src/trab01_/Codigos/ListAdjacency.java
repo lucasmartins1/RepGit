@@ -16,6 +16,10 @@ public class ListAdjacency extends ComputationalRepresentation{
 		lists[u].add(v, w);
 		lists[v].add(u, w);
 	}
+
+	public void addEdgeD(int u, int v, int w){
+		lists[u].add(v, w);
+	}
 	
 	public boolean verifyAdjacency(int u, int v){
 		return lists[u].exist(v);

@@ -12,6 +12,10 @@ public class Graph {
 	public void addEdge(int u, int v, int w){
 		rep.addEdge(u, v, w);
 	}
+
+	public void addEdgeD(int u, int v, int w){
+		rep.addEdge(u, v, w);
+	}
 	
 	public boolean verifyAdjacency(int u, int v){
 		return rep.verifyAdjacency(u, v);
