@@ -1,6 +1,7 @@
 package trab01_.Codigos;
 
 
+
 public class Prim {
 	private int Q[]; // vértices que ainda não fazem parte de X
 	private int key[]; // peso da aresta mais leve do vértice key[u]
@@ -28,33 +29,38 @@ public class Prim {
 		return false;
 	}
 	
-//	protected int extractMin(){
-//		int aux = Integer.MAX_VALUE;
-//		for(int i=0; i<g.getSizeVertex(); i++){
-//			if(g.getWeight(i) < aux && Q[i] != 0){
-//				aux = i;
-//			}
-//		}
-//		return aux;
-//	}
-//	
-//	public void process(){
-//		int r = 0;
-//		for(int i=0; i<g.getSizeVertex(); i++){
-//			key[i] = Integer.MAX_VALUE;
-//			Q[i] = 1;
-//		}
-//		key[r] = 0;
-//		
-//		while(emptyQ()){
-//			int u = extractMin();
-//			X.addEdge(u, pi[u], g.getWeight(u));
-//			for(int i=0; i<g.getSizeVertex(); i++){
-//				if(g.verifyAdjacency(i, u)){
-//					//if(Q[i] == 1 && g.getWeight(v))
-//				}
-//			}
-//		}
-//	}
+	protected int extractMin(){
+		int aux = Integer.MAX_VALUE;
+		for(int i=0; i<g.getSizeVertex(); i++){
+			if(key[i] < aux && Q[i] != 0){
+				aux = i;
+				Q[i] = 0;
+			}
+		}
+		return aux;
+	}
+	
+	public Graph process(){
+		int r = 0;
+		for(int i=0; i<g.getSizeVertex(); i++){
+			key[i] = Integer.MAX_VALUE;
+			Q[i] = 1;
+		}
+		key[r] = 0;
+		
+		while(emptyQ()){
+			int u = extractMin();
+			X.addEdge(u, pi[u], g.getWeight(u, pi[u]));
+			for(int v=0; v<g.getSizeVertex(); v++){
+				if(g.verifyAdjacency(v, u)){
+					if(Q[v] == 1 && g.getWeight(u, v) < key[v]){
+						key[v] = g.getWeight(u, v);
+						pi[v] = u;
+					}// end if
+				} // end if
+			} //end for
+		} // end while
+		return X;
+	}
 	
 }
