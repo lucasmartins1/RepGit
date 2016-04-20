@@ -1,3 +1,6 @@
+package trab01_.Codigos;
+
+
 import java.util.ArrayList;
 
 public class Kruskal {

@@ -44,7 +44,7 @@ public class IDigrafo extends javax.swing.JFrame {
         profBtn = new javax.swing.JButton();
         grafiLabel = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        visBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Funções de Digrafos");
@@ -85,7 +85,12 @@ public class IDigrafo extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Visualizar");
+        visBtn.setText("Visualizar");
+        visBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,14 +103,14 @@ public class IDigrafo extends javax.swing.JFrame {
                     .addComponent(grafiLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(conexBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(krusBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(largBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(profBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(primBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(profBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton1)))
+                            .addComponent(krusBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(conexBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(25, 25, 25)
+                        .addComponent(visBtn)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -121,9 +126,9 @@ public class IDigrafo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(krusBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(conexBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(conexBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(visBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(backBtn)
                 .addContainerGap())
@@ -150,6 +155,11 @@ public class IDigrafo extends javax.swing.JFrame {
         ILargura w = new ILargura(g);
         w.setVisible(true);
     }//GEN-LAST:event_largBtnActionPerformed
+
+    private void visBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visBtnActionPerformed
+        IImpressao imp = new IImpressao(g);
+        imp.setVisible(true);
+    }//GEN-LAST:event_visBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,10 +203,10 @@ public class IDigrafo extends javax.swing.JFrame {
     private javax.swing.JButton backBtn;
     private javax.swing.JButton conexBtn;
     private javax.swing.JLabel grafiLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton krusBtn;
     private javax.swing.JButton largBtn;
     private javax.swing.JButton primBtn;
     private javax.swing.JButton profBtn;
+    private javax.swing.JButton visBtn;
     // End of variables declaration//GEN-END:variables
 }

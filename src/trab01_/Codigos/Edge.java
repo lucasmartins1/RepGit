@@ -1,3 +1,5 @@
+package trab01_.Codigos;
+
 
 public class Edge {
 	private int from;

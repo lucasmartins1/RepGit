@@ -31,15 +31,15 @@
                   <Component id="grafiLabel" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="conexBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="krusBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="largBtn" alignment="1" max="32767" attributes="0"/>
-                          <Component id="primBtn" alignment="1" max="32767" attributes="0"/>
-                          <Component id="profBtn" alignment="1" min="-2" pref="177" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="largBtn" alignment="0" max="32767" attributes="0"/>
+                          <Component id="profBtn" alignment="0" max="32767" attributes="0"/>
+                          <Component id="primBtn" max="32767" attributes="0"/>
+                          <Component id="krusBtn" alignment="0" pref="200" max="32767" attributes="0"/>
+                          <Component id="conexBtn" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="visBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -59,9 +59,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="krusBtn" min="-2" pref="52" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jButton1" max="32767" attributes="0"/>
-                  <Component id="conexBtn" pref="52" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="conexBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="visBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="18" max="32767" attributes="0"/>
               <Component id="backBtn" min="-2" max="-2" attributes="0"/>
@@ -122,10 +122,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="visBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Visualizar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="visBtnActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

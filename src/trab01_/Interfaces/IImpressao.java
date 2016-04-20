@@ -6,6 +6,7 @@
 package trab01_.Interfaces;
 
 import javax.swing.JTextArea;
+import trab01_.Codigos.Graph;
 
 /**
  *
@@ -13,11 +14,15 @@ import javax.swing.JTextArea;
  */
 public class IImpressao extends javax.swing.JFrame {
 
-    /**
-     * Creates new form IImpressão
-     */
+    Graph g;
     public IImpressao() {
         initComponents();
+    }
+    
+    public IImpressao(Graph g){
+        this.g = g;
+        initComponents();
+        this.text.setText(g.show());
     }
     
     public JTextArea getText(){

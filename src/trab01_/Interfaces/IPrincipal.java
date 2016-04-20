@@ -75,6 +75,7 @@ public class IPrincipal extends javax.swing.JFrame {
             }
         });
 
+        dovinLabel.setForeground(new java.awt.Color(255, 105, 180));
         dovinLabel.setText("Arthur Moraes Pires");
 
         fabinLabel.setText("Fabio da Silva Takaki");

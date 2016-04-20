@@ -12,7 +12,12 @@ public class Graph {
 	public Graph(int sizeVertex, ComputationalRepresentation rep){
 		this.sizeVertex = sizeVertex;
 		this.rep = rep;
+                this.edges = new ArrayList();
 	}
+        
+        public ArrayList<Edge> getEdges(){
+            return this.edges;
+        }
 	
 	public void addEdge(int u, int v, int w){
 		rep.addEdge(u, v, w);
@@ -23,7 +28,7 @@ public class Graph {
 	}
 
 	public void addEdgeD(int u, int v, int w){
-		rep.addEdge(u, v, w);
+		rep.addEdgeD(u, v, w);
 
 		// para kruskal
 		Edge item = new Edge(u, v, w);
