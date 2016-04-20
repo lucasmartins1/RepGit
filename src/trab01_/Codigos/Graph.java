@@ -1,9 +1,14 @@
 package trab01_.Codigos;
+import java.util.ArrayList;
 
 
 public class Graph {
 	private int sizeVertex;
 	private ComputationalRepresentation rep;
+
+	// para kruskal
+	private ArrayList<Edge> edges;
+
 	public Graph(int sizeVertex, ComputationalRepresentation rep){
 		this.sizeVertex = sizeVertex;
 		this.rep = rep;
@@ -11,10 +16,18 @@ public class Graph {
 	
 	public void addEdge(int u, int v, int w){
 		rep.addEdge(u, v, w);
+
+		// para kruskal
+		Edge item = new Edge(u, v, w);
+		edges.add(item);
 	}
 
 	public void addEdgeD(int u, int v, int w){
 		rep.addEdge(u, v, w);
+
+		// para kruskal
+		Edge item = new Edge(u, v, w);
+		edges.add(item);
 	}
 	
 	public boolean verifyAdjacency(int u, int v){
