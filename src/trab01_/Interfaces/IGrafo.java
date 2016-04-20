@@ -44,9 +44,9 @@ public class IGrafo extends javax.swing.JFrame {
         profBtn = new javax.swing.JButton();
         grafiLabel = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
-        conexBtn1 = new javax.swing.JButton();
-        conexBtn2 = new javax.swing.JButton();
-        conexBtn7 = new javax.swing.JButton();
+        dijkstraBtn = new javax.swing.JButton();
+        bellmanBtn = new javax.swing.JButton();
+        visBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Funções de Grafos");
@@ -61,6 +61,11 @@ public class IGrafo extends javax.swing.JFrame {
         });
 
         krusBtn.setText("Algoritmo de KRUSKAL");
+        krusBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                krusBtnActionPerformed(evt);
+            }
+        });
 
         largBtn.setText("Busca em LARGURA");
         largBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -87,11 +92,16 @@ public class IGrafo extends javax.swing.JFrame {
             }
         });
 
-        conexBtn1.setText("Algoritmo de DIJKSTRA");
+        dijkstraBtn.setText("Algoritmo de DIJKSTRA");
 
-        conexBtn2.setText("Algoritmo de BELLMAN-FORD");
+        bellmanBtn.setText("Algoritmo de BELLMAN-FORD");
 
-        conexBtn7.setText("Visualizar");
+        visBtn.setText("Visualizar");
+        visBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,15 +115,15 @@ public class IGrafo extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(krusBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(largBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(primBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(profBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                            .addComponent(conexBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(conexBtn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(conexBtn2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(conexBtn7, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(conexBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(largBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(visBtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(dijkstraBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bellmanBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -123,11 +133,11 @@ public class IGrafo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(largBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(conexBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dijkstraBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(profBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(conexBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bellmanBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(primBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -135,7 +145,7 @@ public class IGrafo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(conexBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(conexBtn7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(visBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(backBtn)
                 .addContainerGap())
@@ -162,6 +172,17 @@ public class IGrafo extends javax.swing.JFrame {
         ILargura w = new ILargura(g);
         w.setVisible(true);
     }//GEN-LAST:event_largBtnActionPerformed
+
+    private void krusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_krusBtnActionPerformed
+        IKruskal k = new IKruskal(g);
+        k.setVisible(true);
+    }//GEN-LAST:event_krusBtnActionPerformed
+
+    private void visBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visBtnActionPerformed
+        IImpressao imp = new IImpressao(g);
+        imp.setVisible(true);
+        
+    }//GEN-LAST:event_visBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,14 +222,14 @@ public class IGrafo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
+    private javax.swing.JButton bellmanBtn;
     private javax.swing.JButton conexBtn;
-    private javax.swing.JButton conexBtn1;
-    private javax.swing.JButton conexBtn2;
-    private javax.swing.JButton conexBtn7;
+    private javax.swing.JButton dijkstraBtn;
     private javax.swing.JLabel grafiLabel;
     private javax.swing.JButton krusBtn;
     private javax.swing.JButton largBtn;
     private javax.swing.JButton primBtn;
     private javax.swing.JButton profBtn;
+    private javax.swing.JButton visBtn;
     // End of variables declaration//GEN-END:variables
 }
