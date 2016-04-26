@@ -95,6 +95,11 @@ public class IGrafo extends javax.swing.JFrame {
         dijkstraBtn.setText("Algoritmo de DIJKSTRA");
 
         bellmanBtn.setText("Algoritmo de BELLMAN-FORD");
+        bellmanBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bellmanBtnActionPerformed(evt);
+            }
+        });
 
         visBtn.setText("Visualizar");
         visBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +188,11 @@ public class IGrafo extends javax.swing.JFrame {
         imp.setVisible(true);
         
     }//GEN-LAST:event_visBtnActionPerformed
+
+    private void bellmanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bellmanBtnActionPerformed
+        IBellman b = new IBellman(g, 'g');
+        b.setVisible(true);
+    }//GEN-LAST:event_bellmanBtnActionPerformed
 
     /**
      * @param args the command line arguments

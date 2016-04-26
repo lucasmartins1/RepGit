@@ -59,6 +59,11 @@ public class IDigrafo extends javax.swing.JFrame {
         });
 
         krusBtn.setText("Algoritmo de BELLMAN-FORD");
+        krusBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                krusBtnActionPerformed(evt);
+            }
+        });
 
         largBtn.setText("Busca em LARGURA");
         largBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +165,11 @@ public class IDigrafo extends javax.swing.JFrame {
         IImpressao imp = new IImpressao(g);
         imp.setVisible(true);
     }//GEN-LAST:event_visBtnActionPerformed
+
+    private void krusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_krusBtnActionPerformed
+        IBellman b = new IBellman(g, 'd');
+        b.setVisible(true);
+    }//GEN-LAST:event_krusBtnActionPerformed
 
     /**
      * @param args the command line arguments

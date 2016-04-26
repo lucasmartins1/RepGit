@@ -1,3 +1,5 @@
+package trab01_.Codigos;
+
 public class Dijkstra {
 	private Graph g;
 	private int d[];
@@ -42,8 +44,8 @@ public class Dijkstra {
 		return true;
 	}
 	
-	public void process(){
-		int s = 0;
+	public String process(int num){
+		int s = num;
 		//inicializa
 		for(int i=0; i<g.getSizeVertex(); i++){
 			d[i] = Integer.MAX_VALUE;
@@ -64,13 +66,15 @@ public class Dijkstra {
 			}
 		}
 		
-		System.out.println("DIJKSTRA");
+		String imp = "";
 		for(int i=0; i<g.getSizeVertex(); i++){
+                    imp+=imp+"";
 			System.out.println("D["+i+"]:"+d[i]);
 		}
 		for(int i=0; i<g.getSizeVertex(); i++){
 			System.out.println("PI["+i+"]:"+pi[i]);
 		}
+                return imp;
 		
 	}
 	

@@ -8,27 +8,29 @@ package trab01_.Interfaces;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import trab01_.Codigos.BellmanFord;
 import trab01_.Codigos.Graph;
-import trab01_.Codigos.Prim;
 
 /**
  *
  * @author user
  */
-public class IPrim extends javax.swing.JFrame {
+public class IBellman extends javax.swing.JFrame {
 
     /**
      * Creates new form IProfundidade
      */
     
     private Graph g;
+    private char tipo;
     
-    public IPrim() {
+    public IBellman() {
         initComponents();
     }
     
-    public IPrim(Graph g){
+    public IBellman(Graph g, char tipo){
         this.g = g;
+        this.tipo = tipo;
         initComponents();
     }
 
@@ -50,10 +52,10 @@ public class IPrim extends javax.swing.JFrame {
         buscarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Prim");
+        setTitle("Bellman-Ford");
 
         buscaLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        buscaLabel.setText("ALGORITMO DE PRIM");
+        buscaLabel.setText("ALGORITMO DE BELLMAN-FORD");
 
         textArea.setColumns(20);
         textArea.setRows(5);
@@ -84,7 +86,7 @@ public class IPrim extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buscaLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                         .addComponent(vLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -125,15 +127,16 @@ public class IPrim extends javax.swing.JFrame {
         this.textArea.setText("");
         int num;
         num = Integer.valueOf(this.text.getText());
-        Prim p = new Prim(g);
+        BellmanFord p = new BellmanFord(g);
         if (num>=g.getSizeVertex()){
             JOptionPane.showMessageDialog(new JFrame(), "Vértice não existente", "Erro no carregamento",JOptionPane.ERROR_MESSAGE);
         }
         else{
-            Graph result;
-            result = p.process(num);
-            this.textArea.setText(result.show());
+            String result;
+            result = p.process(num, this.tipo);
+            this.textArea.setText(result);
         }
+        
     }//GEN-LAST:event_buscarBtnActionPerformed
 
     /**
@@ -153,14 +156,22 @@ public class IPrim extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(IPrim.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IBellman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(IPrim.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IBellman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(IPrim.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IBellman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(IPrim.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(IBellman.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -173,7 +184,7 @@ public class IPrim extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IPrim().setVisible(true);
+                new IBellman().setVisible(true);
             }
         });
     }
