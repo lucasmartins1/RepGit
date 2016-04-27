@@ -26,14 +26,17 @@ public class Dijkstra {
 	
 	protected int extractMin(){
 		int aux = Integer.MAX_VALUE;
-		int x = 4;
+		int x = Integer.MAX_VALUE;
 		for(int i=0; i<g.getSizeVertex(); i++){
-			if(d[i] < aux && Q[i] == false){
+                    if(Q[i] == false){
+                        if(d[i] < aux){
 				aux = d[i];
 				x = i;
 			}
+                    }
 		}
-		Q[x] = true;
+                if(x != Integer.MAX_VALUE)
+                    Q[x] = true;
 		return x;
 	}
 	
@@ -44,35 +47,50 @@ public class Dijkstra {
 		return true;
 	}
 	
-	public String process(int num){
+	public String process(int num, char tipo){
 		int s = num;
 		//inicializa
 		for(int i=0; i<g.getSizeVertex(); i++){
-			d[i] = Integer.MAX_VALUE;
-			pi[i] = -1;
-			Q[i] = false;
-			S[i] = true;
+                    d[i] = Integer.MAX_VALUE;
+                    pi[i] = -1;
+                    Q[i] = false;
+                    S[i] = true;
 		}
 		d[s] = 0;
 		
 		while(emptyQ() == false){
 			int u = extractMin();
+                        if(u == Integer.MAX_VALUE)
+                            break;
 			// S <- S U {u}
 			S[u] = false;
 			for(int v=0; v<g.getSizeVertex(); v++){
-				if(g.verifyAdjacency(v, u)){
-					relax(u, v);
-				}
+                            if(g.verifyAdjacency(u, v)){
+                                if(tipo=='d'){
+                                    relax(u, v);
+                                }
+                                else if(tipo=='g'){
+                                    relax(u,v);
+                                    relax(v,u);
+                                }
+                            }
 			}
 		}
 		
 		String imp = "";
 		for(int i=0; i<g.getSizeVertex(); i++){
-                    imp+=imp+"";
-			System.out.println("D["+i+"]:"+d[i]);
+                    if(d[i] == Integer.MAX_VALUE)
+                        imp+="D["+i+"]: XX\n";
+                    else
+                        imp+="D["+i+"]: "+d[i]+"\n";
+			//System.out.println("D["+i+"]: "+d[i]);
 		}
 		for(int i=0; i<g.getSizeVertex(); i++){
-			System.out.println("PI["+i+"]:"+pi[i]);
+                    if(pi[i] == -1)
+                        imp+="\nPI["+i+"]: XX";
+                    else
+                        imp+="\nPI["+i+"]: "+pi[i];
+			//System.out.println("PI["+i+"]: "+pi[i]);
 		}
                 return imp;
 		

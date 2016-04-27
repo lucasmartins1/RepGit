@@ -23,12 +23,14 @@ public class IDijkstra extends javax.swing.JFrame {
      */
     
     private Graph g;
+    private char tipo;
     
     public IDijkstra() {
         initComponents();
     }
     
-    public IDijkstra(Graph g){
+    public IDijkstra(Graph g, char tipo){
+        this.tipo = tipo;
         this.g = g;
         initComponents();
     }
@@ -54,7 +56,7 @@ public class IDijkstra extends javax.swing.JFrame {
         setTitle("Bellman-Ford");
 
         buscaLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        buscaLabel.setText("ALGORITMO DE BELLMAN-FORD");
+        buscaLabel.setText("ALGORITMO DE DIJKSTRA");
 
         textArea.setColumns(20);
         textArea.setRows(5);
@@ -85,7 +87,7 @@ public class IDijkstra extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buscaLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                         .addComponent(vLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,7 +134,7 @@ public class IDijkstra extends javax.swing.JFrame {
         }
         else{
             String result;
-            result = d.process(num);
+            result = d.process(num, tipo);
             this.textArea.setText(result);
         }
         

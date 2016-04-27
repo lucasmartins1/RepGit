@@ -61,20 +61,19 @@ public class BellmanFord {
         String imp="";
             if(bellman(num, tipo)){
                 for(int i=0; i<g.getSizeVertex(); i++){
-                    imp += i+" dista: ";
-                    if(d[i] != 999999)
-                        imp+= d[i]+"\n";
+                    if(d[i] == 999999)
+                        imp+="D["+i+"]: XX\n";
                     else
-                        imp+= "XX\n";
-                        //System.out.println("D["+i+"]:"+d[i]);
-                }
-                for(int i=0; i<g.getSizeVertex(); i++){
-                    if(d[i] == 0)
-                        imp+="\nORIGEM: "+i;
-                    else if(pi[i] != -1)
-                        imp+="\nPAI: "+pi[i]+" ->  "+i;
-                        //System.out.println("PI["+i+"]:"+pi[i]);
-                }
+                        imp+="D["+i+"]: "+d[i]+"\n";
+			//System.out.println("D["+i+"]: "+d[i]);
+		}
+		for(int i=0; i<g.getSizeVertex(); i++){
+                    if(pi[i] == -1)
+                        imp+="\nPI["+i+"]: XX";
+                    else
+                        imp+="\nPI["+i+"]: "+pi[i];
+			//System.out.println("PI["+i+"]: "+pi[i]);
+		}
                 return imp;
             }
             return "Não foi possível executar um caminho mínimo";

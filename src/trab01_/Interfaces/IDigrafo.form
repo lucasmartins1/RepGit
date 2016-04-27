@@ -34,8 +34,8 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="largBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="profBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="primBtn" max="32767" attributes="0"/>
-                          <Component id="krusBtn" alignment="0" pref="200" max="32767" attributes="0"/>
+                          <Component id="dijskstraBtn" max="32767" attributes="0"/>
+                          <Component id="bellmanBtn" alignment="0" pref="200" max="32767" attributes="0"/>
                           <Component id="conexBtn" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
@@ -55,9 +55,9 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="profBtn" min="-2" pref="52" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="primBtn" min="-2" pref="52" max="-2" attributes="0"/>
+              <Component id="dijskstraBtn" min="-2" pref="52" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="krusBtn" min="-2" pref="52" max="-2" attributes="0"/>
+              <Component id="bellmanBtn" min="-2" pref="52" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="conexBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
@@ -75,21 +75,24 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="CAMINHO entre V&#xe9;rtices"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="conexBtnActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="primBtn">
+    <Component class="javax.swing.JButton" name="dijskstraBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Algoritmo de DIJKSTRA"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="primBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dijskstraBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="krusBtn">
+    <Component class="javax.swing.JButton" name="bellmanBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Algoritmo de BELLMAN-FORD"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="krusBtnActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bellmanBtnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="largBtn">

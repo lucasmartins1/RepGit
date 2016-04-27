@@ -34,7 +34,7 @@
                           <Component id="krusBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="primBtn" alignment="1" max="32767" attributes="0"/>
                           <Component id="profBtn" alignment="1" pref="177" max="32767" attributes="0"/>
-                          <Component id="conexBtn" alignment="0" max="32767" attributes="0"/>
+                          <Component id="camBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="largBtn" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="55" max="32767" attributes="0"/>
@@ -42,6 +42,7 @@
                           <Component id="visBtn" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="dijkstraBtn" alignment="1" max="32767" attributes="0"/>
                           <Component id="bellmanBtn" alignment="1" pref="180" max="32767" attributes="0"/>
+                          <Component id="conexBtn" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -64,12 +65,15 @@
                   <Component id="bellmanBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="primBtn" min="-2" pref="52" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="primBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="conexBtn" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="krusBtn" min="-2" pref="52" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="conexBtn" min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="camBtn" min="-2" pref="52" max="-2" attributes="0"/>
                   <Component id="visBtn" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="18" max="32767" attributes="0"/>
@@ -80,10 +84,13 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="conexBtn">
+    <Component class="javax.swing.JButton" name="camBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="CAMINHO entre V&#xe9;rtices"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="camBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="primBtn">
       <Properties>
@@ -138,6 +145,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Algoritmo de DIJKSTRA"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dijkstraBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="bellmanBtn">
       <Properties>
@@ -153,6 +163,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="visBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="conexBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Verificar a CONEXIDADE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="conexBtnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
