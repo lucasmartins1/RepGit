@@ -221,7 +221,8 @@ public class IGrafo extends javax.swing.JFrame {
     }//GEN-LAST:event_dijkstraBtnActionPerformed
 
     private void camBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_camBtnActionPerformed
-        // TODO add your handling code here:
+        ICaminho c = new ICaminho(g);
+        c.setVisible(true);
     }//GEN-LAST:event_camBtnActionPerformed
 
     private void conexBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conexBtnActionPerformed

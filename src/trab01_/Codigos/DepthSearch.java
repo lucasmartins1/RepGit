@@ -36,6 +36,11 @@ public class DepthSearch {
 			if(colors[i].equals("w"))
 				visit(i); // visito o vértice
 		}
+                for(int i=0; i< g.getSizeVertex(); i++){
+			if(colors[i].equals("w"))
+				visit(i); // visito o vértice
+		}
+                
                 return true;
 	}
 	
@@ -45,7 +50,7 @@ public class DepthSearch {
 		this.starts[i] = time;
 		
 		for(int j=0; j < g.getSizeVertex(); j++){
-			if(g.verifyAdjacency(j, i)){
+			if(g.verifyAdjacency(i, j)){
 				if(colors[j] == "w")
 					visit(j);
 			}
@@ -59,7 +64,7 @@ public class DepthSearch {
 	public String show(){
             String imp = "";
 		for(int i=0; i< g.getSizeVertex(); i++){
-                    imp = imp+"Vértice "+i+"\nTempo de chegada:" + starts[i]+"\nTempo de finalização:" + ends[i]+"\n\n";
+                    imp = imp+i+"\nChegada:" + starts[i]+"\nFinal:" + ends[i]+"\n\n";
 		}
                 return imp;
 	}

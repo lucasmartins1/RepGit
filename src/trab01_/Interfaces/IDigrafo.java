@@ -177,7 +177,8 @@ public class IDigrafo extends javax.swing.JFrame {
     }//GEN-LAST:event_bellmanBtnActionPerformed
 
     private void conexBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conexBtnActionPerformed
-        // TODO add your handling code here:
+        ICaminho c = new ICaminho(g);
+        c.setVisible(true);
     }//GEN-LAST:event_conexBtnActionPerformed
 
     /**

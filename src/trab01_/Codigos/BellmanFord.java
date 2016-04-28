@@ -62,16 +62,16 @@ public class BellmanFord {
             if(bellman(num, tipo)){
                 for(int i=0; i<g.getSizeVertex(); i++){
                     if(d[i] == 999999)
-                        imp+="D["+i+"]: XX\n";
+                        imp+="D ["+i+"]: XX\n";
                     else
-                        imp+="D["+i+"]: "+d[i]+"\n";
+                        imp+="D ["+i+"]: "+d[i]+"\n";
 			//System.out.println("D["+i+"]: "+d[i]);
 		}
 		for(int i=0; i<g.getSizeVertex(); i++){
                     if(pi[i] == -1)
-                        imp+="\nPI["+i+"]: XX";
+                        imp+="\nP ["+i+"]: XX";
                     else
-                        imp+="\nPI["+i+"]: "+pi[i];
+                        imp+="\nP ["+i+"]: "+pi[i];
 			//System.out.println("PI["+i+"]: "+pi[i]);
 		}
                 return imp;

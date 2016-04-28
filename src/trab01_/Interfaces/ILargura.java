@@ -47,6 +47,7 @@ public class ILargura extends javax.swing.JFrame {
         vLabel = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         buscarBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Largura");
@@ -74,6 +75,8 @@ public class ILargura extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("\"D[ i ] = XX \" significa que não há caminhos para este vértice");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,8 +97,11 @@ public class ILargura extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buscarBtn)
-                        .addGap(12, 12, 12))))
+                        .addComponent(buscarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,7 +113,9 @@ public class ILargura extends javax.swing.JFrame {
                     .addComponent(buscarBtn)
                     .addComponent(buscaLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(backBtn)
                 .addContainerGap())
@@ -176,6 +184,7 @@ public class ILargura extends javax.swing.JFrame {
     private javax.swing.JButton backBtn;
     private javax.swing.JLabel buscaLabel;
     private javax.swing.JButton buscarBtn;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField text;
     private javax.swing.JTextArea textArea;

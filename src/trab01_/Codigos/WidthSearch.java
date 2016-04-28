@@ -36,7 +36,7 @@ public class WidthSearch {
 			Item u = q.getHead();
 			q.remove();
 			for(int v=0; v<g.getSizeVertex(); v++){
-				if(g.verifyAdjacency(v, u.getValue())){
+				if(g.verifyAdjacency(u.getValue(), v)){
 					if(colors[v] == "w"){
 						colors[v] = "g";
 						distance[v] = distance[u.getValue()]+1;
@@ -53,7 +53,10 @@ public class WidthSearch {
 	public String show(){
                 String imp = "";
 		for(int i=0; i< g.getSizeVertex(); i++){
-                    imp = imp + "Vértice "+i+"\nDistância:" + distance[i]+"\n\n";
+                    if(distance[i] == Integer.MAX_VALUE)
+                        imp+="D ["+i+"]: XX\n";
+                    else
+                        imp+="D ["+i+"]: "+distance[i]+"\n";
 		}
                 return imp;
 	}
