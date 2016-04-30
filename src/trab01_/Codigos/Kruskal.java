@@ -18,49 +18,34 @@ public class Kruskal {
 		this.X = new Graph(g.getSizeVertex(), new ListAdjacency(g.getSizeVertex()));
 	}
 	
-	protected void QuickSort(){
-		int size = A.size();
-		size--;
-		quickSortHelper(0, size);
+	int Partition(int left, int right)
+	{
+		int i = left, j = right;
+		int pivot = A.get((left+right)/2).getWeight();
+		 
+		while (i <= j) {
+				while (A.get(i).getWeight() < pivot)
+					i++;
+				while (A.get(j).getWeight() > pivot)
+					j--;
+				if (i <= j) {
+					Edge temp = A.get(i);
+					A.set(i, A.get(j));
+					A.set(j, temp);
+					i++;
+					j--;
+				}
+		  };
+		 
+		  return i;
 	}
-	
-	protected int QuickSortPartition(int first, int last){
-		int pivo = A.get(first).getWeight();
-		
-		int leftmark = first++;
-		int rightmark = last;
-		
-		boolean done = false;
-		
-		while(done == false){
-			while(leftmark <= rightmark && A.get(leftmark).getWeight() <= pivo)
-				leftmark++;
-			while(A.get(rightmark).getWeight() >= pivo && rightmark >= leftmark)
-				rightmark--;
-			
-			if(rightmark < leftmark){
-				done = true;
-			}else{
-				Edge temp = A.get(leftmark);
-				A.set(leftmark, A.get(rightmark));
-				A.set(rightmark, temp);
-			}	
-		} // fim while
-		Edge temp = A.get(first);
-		A.set(first, A.get(rightmark));
-		A.set(rightmark, temp);
-		
-		return rightmark;
-	}
-	
-	protected void quickSortHelper(int first, int last){
-		int splitpoint;
-		if(first < last){
-			splitpoint = QuickSortPartition(first, last);
-			
-			quickSortHelper(first, splitpoint--);
-			quickSortHelper(splitpoint++, last);
-		}
+	 
+	void QuickSort(int left, int right) {
+		  int index = Partition(left, right);
+		  if (left < index - 1)
+				QuickSort(left, index - 1);
+		  if (index < right)
+				QuickSort(index, right);
 	}
 	
 	protected void bubbleSort(){
@@ -88,7 +73,7 @@ public class Kruskal {
 			V[i] = false;
 		}
 
-		bubbleSort();
+		QuickSort();
 		
 		for(int i=0; i<A.size(); i++){
 			// se não pertence na mesma árvore
