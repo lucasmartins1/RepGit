@@ -68,12 +68,14 @@ public class Kruskal {
 
 	
 	public Graph process(){
+            int size=A.size();
+            size--;
 		for(int i=0; i<g.getSizeVertex(); i++){
 			T[i] = i;
 			V[i] = false;
 		}
 
-		QuickSort();
+		QuickSort(0, size);
 		
 		for(int i=0; i<A.size(); i++){
 			// se não pertence na mesma árvore
