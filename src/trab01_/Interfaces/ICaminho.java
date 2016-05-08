@@ -6,6 +6,7 @@
 package trab01_.Interfaces;
 
 import trab01_.Codigos.Graph;
+import trab01_.Codigos.CheckPath;
 
 /**
  *
@@ -59,6 +60,11 @@ public class ICaminho extends javax.swing.JFrame {
         });
 
         profBtn.setText("Algortimo de Busca em Profundidade");
+        profBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profBtnActionPerformed(evt);
+            }
+        });
 
         text.setColumns(20);
         text.setRows(5);
@@ -75,7 +81,7 @@ public class ICaminho extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("\"D[ i ] = XX \" significa que não há caminhos para este vértice");
+        jLabel1.setText("Selecione o algoritmo desejado.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,8 +144,18 @@ public class ICaminho extends javax.swing.JFrame {
 
     private void largBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_largBtnActionPerformed
         // TODO add your handling code here:
+    	CheckPath cp = new CheckPath(g);
+    	String text = cp.processWidthSearch(Integer.parseInt(v1Text.getText()), Integer.parseInt(v2Text.getText()));
+    	this.text.setText(text);
     }//GEN-LAST:event_largBtnActionPerformed
 
+    private void profBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_largBtnActionPerformed
+        // TODO add your handling code here:
+    	CheckPath cp = new CheckPath(g);
+    	String text = cp.processDepthSearch(Integer.parseInt(v1Text.getText()), Integer.parseInt(v2Text.getText()));
+    	this.text.setText(text);
+    }//GEN-LAST:event_largBtnActionPerformed
+    
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         this.text.setText("");
         setVisible(false);

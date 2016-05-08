@@ -50,6 +50,14 @@ public class WidthSearch {
                 return true;
 	}
 	
+	public int[] getPi(){
+		return this.pi;
+	}
+	
+	public String[] getColors(){
+		return this.colors;
+	}
+	
 	public String show(){
                 String imp = "";
 		for(int i=0; i< g.getSizeVertex(); i++){

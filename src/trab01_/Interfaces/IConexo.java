@@ -6,7 +6,9 @@
 package trab01_.Interfaces;
 
 import javax.swing.JTextArea;
+
 import trab01_.Codigos.Graph;
+import trab01_.Codigos.Connected;
 
 /**
  *
@@ -42,6 +44,12 @@ public class IConexo extends javax.swing.JFrame {
         text.setColumns(20);
         text.setRows(5);
         jScrollPane1.setViewportView(text);
+        
+        Connected c = new Connected(g);
+        c.depthSearch();
+        
+        String result = c.result();
+        this.text.setText(result);
 
         backBtn.setText("Voltar");
         backBtn.addActionListener(new java.awt.event.ActionListener() {

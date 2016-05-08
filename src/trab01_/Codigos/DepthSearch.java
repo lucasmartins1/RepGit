@@ -8,6 +8,10 @@ public class DepthSearch {
 	private int[] ends;
 	private int time;
 	
+	// para os caminhos
+	private int goodPath[];
+	private boolean verify;
+	
 	/*
 	 * colors:
 	 *		w: white
@@ -21,6 +25,9 @@ public class DepthSearch {
 		this.colors = new String[g.getSizeVertex()];
 		this.starts = new int[g.getSizeVertex()];
 		this.ends 	= new int[g.getSizeVertex()];
+		
+		this.goodPath = new int[g.getSizeVertex()];
+		this.verify = true;
 	}
 	
 	public boolean process(int num){
@@ -28,17 +35,19 @@ public class DepthSearch {
                     return false;
 		for(int i=0; i< g.getSizeVertex(); i++){
 			this.colors[i] = "w";
+			this.goodPath[i] = -1;
 		}
 		
 		this.time = 0;
 		
-		for(int i=num; i< g.getSizeVertex(); i++){
-			if(colors[i].equals("w"))
-				visit(i); // visito o vértice
+		if(colors[num].equals("w")){
+			visit(num); // visito o vértice inicial
 		}
-                for(int i=0; i< g.getSizeVertex(); i++){
-			if(colors[i].equals("w"))
+        verify = false;
+		for(int i=0; i< g.getSizeVertex(); i++){
+			if(colors[i].equals("w")){
 				visit(i); // visito o vértice
+			}
 		}
                 
                 return true;
@@ -51,14 +60,20 @@ public class DepthSearch {
 		
 		for(int j=0; j < g.getSizeVertex(); j++){
 			if(g.verifyAdjacency(i, j)){
-				if(colors[j] == "w")
+				if(colors[j] == "w"){
 					visit(j);
+					if(verify) goodPath[j] = i;
+				}
 			}
 		}
 		colors[i] = "b";
 		this.time++;
 		ends[i] = this.time;
 		
+	}
+	
+	public int[] getGoodPath(){
+		return goodPath;
 	}
 	
 	public String show(){
